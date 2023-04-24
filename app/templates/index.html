@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Radhika's Portfolio</title>
+<!--    CSS     -->
+  <link rel="stylesheet" href="../static/admin/css/portfolio.css">
+</head>
+<body>
+ <header>
+  <nav>
+    <div class="container">
+      <h1 class="logo"><i></i></h1>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<!--  Home Section -->
+<section id="home" style="background-image: url('https://media.istockphoto.com/id/1294603953/vector/abstract-black-stripes-diagonal-background.jpg?s=612x612&w=0&k=20&c=nQZHTk-o97cNVqWnUe8BJg0A5jQG0tqylquzbt9YtcQ='); height: 100vh; display: flex; flex-direction: row; justify-content: center; align-items: center; text-align: center; padding: 50px; color: #fff;">
+  <div style="flex-basis: 70%; padding-right: 50px;">
+    <h1 style="font-size: 36px; font-weight: bold; margin-bottom: 20px;">Hi, I am Radhika Piplani</h1>
+    <p style="font-size: 24px; margin-bottom: 20px;">I am a <span id="typing-text" style="display: inline-block;"></span></p>
+  </div>
+{% load static %}
+<div style="flex-basis: 30%; text-align: center;">
+    <div style="width: 500px; height: 500px; border-radius: 50%; overflow: hidden;">
+        <img src="{% static 'img/9.jpg' %}" alt="Profile Image" style="object-fit: cover; width: 100%; height: 100%;">
+    </div>
+</div>
+</section>
+<!--  About Section -->
+<section id="about" class="flex-container" style="background-image: url('https://media.istockphoto.com/id/1352152504/vector/abstract-dark-black-papercut-geometric-background-modern-futuristic-background-can-be-use.jpg?s=612x612&w=0&k=20&c=yfLNqPWFSydHVIZuKmjwsauuRBtlhTArOYF5xnc8XGo='); background-size: cover; background-position: center;'); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="profile-pic">
+      <img src="{% static 'img/120.jpg'%}" alt="Radhika's photo">
+    </div>
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>I am a Software Developer. I enjoy problem-solving and coding. I have worked on technologies like Python, Django, Django Rest Framework, PostgreSQL, HTML, CSS, Java. I am passionate about developing complex applications that solve real-world problems.I'm eager to learn new technologies and collaborate
+      with other developers to create efficient and user-friendly Software utilities.</p>
+      <p><b>Languages</b>: <i>Python, Java, JavaScript, HTML/CSS</i><br>
+      <b>Databases</b>: <i>MySQL, PostgreSQL, SQLite</i><br>
+      <b>Frameworks</b>: <i>Django, Django Rest Framework, Bootstrap</i><br>
+      <b>Tools & Technologies</b>: <i>Git</i></p>
+    </div>
+  </div>
+</section>
+<!--  Portfolio Section -->
+ <section id="portfolio" style="background-image: url('https://img.freepik.com/free-vector/dark-minimal-hexagons-background_79603-1455.jpg'); background-size: cover; background-position: center;">
+    <h2 style="color: white;">Projects</h2>
+    <p style="color: white;">Projects I made, and see the links of my code</p>
+ <div class="project">
+  <h3>Gallery Project (REST API) (2023)</h3>
+  <p>Technology: Django Rest Framework</p>
+  <p>Database: PostgreSQL</p>
+  <p>Authentication: JSON Web Token (JWT)</p>
+  <p>Description: Developed the Backend for Gallery project which includes Signup, Signout, Login (using JWT), image-gallery, image, video-gallery, and video API.</p>
+  <p>
+    <a href="https://github.com/radhika2208/Gallery-Project" target="_blank">
+      View Code:
+      <span class="click-me">Click me</span>
+    </a>
+  </p>
+</div>
+    <div class="project">
+        <h3>CRUD API (2022)</h3>
+        <p>Technology: HTML, CSS, JavaScript, Django Rest Framework</p>
+        <p>Database: PostgreSQL</p>
+        <p>Description: Developed a Backend API for Create, Retrieve, Update, and Delete (CRUD) functionality for Book Details and consumed it on Frontend using Python Requests package.</p>
+        <p>
+          <a href="https://github.com/radhika2208/CRUD_API" target="_blank">
+            View Code:
+             <span class="click-me">Click me</span>
+    </a></p>
+    </div>
+
+    <div class="project">
+        <h3>What to Read Now (2021)</h3>
+        <p>Technology: HTML, CSS, JavaScript</p>
+        <p>Description: What to read now is a Web Application which stores the information of the books like Name, Author, No. of pages, and Price.</p>
+        <p>View Code:
+          <a href="https://github.com/radhika2208/what-to-read-now" target="_blank">
+           View Code:
+             <span class="click-me">Click me</span>
+    </a></p>
+    </div>
+  </section>
+ <!--  contact Section -->
+<section id="contact" style="background-image: url('https://static.vecteezy.com/system/resources/previews/000/518/459/original/vector-black-stage-curtain-wallpaper-and-studio-room-banner-background.jpg'); background-size: cover; background-position: center;">
+    <div class="contact-container">
+        <h2>Contact Me</h2>
+        <form action="/#contact"method="post" class="contact-form">
+             {% csrf_token %}
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+            <input type="email" id="email" name="email" required placeholder="Your Email">
+            <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+            <input type="submit" value="Send">
+        </form>
+      {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success mt-3" role="alert" style="background-color: #00FFFF; color: black; border: none; border-radius: 5px; padding: 10px;">
+            <strong>Success!</strong> {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+        <div class="social-icons">
+            <h3>Connect with me on social platforms:</h3>
+            <a href="https://www.linkedin.com/in/radhika-piplani-54ab6719a/" target="_blank"><img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="linkedin" style="width: 40px; height: 40px;"></a>
+            <a href="https://github.com/radhika2208"target="_blank"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 40px; height: 40px;"></a>
+            <a href="https://twitter.com/piplani_radhika" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/889/889147.png" alt="Twitter" style="width: 40px; height: 40px;"></a>
+            <a href="https://www.instagram.com/radhika_piplani/?igshid=ZDdkNTZiNTM%3D"target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram" style="width: 40px; height: 40px;"></a>
+        </div>
+    </div>
+</section>
+<!--   Footer  -->
+  <footer>
+    <p>&copy;  Radhika Piplani | All rights reserved</p>
+  </footer>
+<!--    JS       -->
+    <script src="../static/admin/js/portfolio.js"></script>
+</body>
+</html>
