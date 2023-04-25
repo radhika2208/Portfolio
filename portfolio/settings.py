@@ -23,9 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-d4_qt&xhq06*i(*2iz401m!vjgfm5mbupmgnb25_9(0&ed7bjy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
+<<<<<<< HEAD
 ALLOWED_HOST = ['*']
+=======
+ALLOWED_HOSTS = ['radhika2208.pythonanywhere.com']
+>>>>>>> 26bb932373cf47e97e6fe1f7fe49dc7149910d2c
 
 
 # Application definition
@@ -131,4 +135,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'radhikapiplani12@gmail.com'
+<<<<<<< HEAD
 EMAIL_HOST_PASSWORD = 'nompdkutnnrwwthc'
+=======
+EMAIL_HOST_PASSWORD = 'hqaucdcafozxgyqz'
+>>>>>>> 26bb932373cf47e97e6fe1f7fe49dc7149910d2c
