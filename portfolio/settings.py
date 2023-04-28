@@ -129,4 +129,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'radhikapiplani12@gmail.com'
+<<<<<<< HEAD
 EMAIL_HOST_PASSWORD = 'bpgbmiintwuafgcy'
+=======
+EMAIL_HOST_PASSWORD = ''
+>>>>>>> 073b9e86238dc0e7be322862aa56fedb7cfc033a
