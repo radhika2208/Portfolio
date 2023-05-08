@@ -14,8 +14,9 @@ def index(request):
     if request.method == "POST":
         name = request.POST['name']
         email = request.POST['email']
+        subject = request.POST['subject']
         message = request.POST['message']
-        ins = detail(name=name, email=email, message=message)
+        ins = detail(name=name, email=email, subject=subject, message=message)
         ins.save()
         """
         Send email to user
